@@ -1,11 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  string: MyString
   content: MyText
+  user: jeffrey
+
 
 two:
-  name: MyString
-  string: MyString
   content: MyText
+  user: jeffrey
+
+three:
+  content: "hi, I'm Jason"
+  user: jason
+

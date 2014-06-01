@@ -13,3 +13,40 @@
  *= require_tree .
  *= require_self
  */
+
+body{
+padding-top: 55px;
+}
+
+.login{
+	width: 550px;
+	overflow:hidden;
+}
+
+.login li{
+	width: 170px;
+	float: left;
+	margin-top:10px;
+	margin-right:5px;
+}
+
+.login li input{
+	border-radius: 3px;
+	border: none;
+	padding: 5px;
+	}
+
+	.login li .btn{
+	border-radius: 3px;
+	border: none;
+	padding: 5px;
+	margin-right:10px;
+	}
+
+.page-header{
+	margin-top:0px;
+}
+
+.alert{
+	margin-top:10px;
+}

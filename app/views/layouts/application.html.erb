@@ -8,7 +8,51 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+				<a href="#" class="navbar-brand">Treebook</a>
+				<ul class="nav navbar-nav">
+					<li><%= link_to "All Statuses", feed_path %>
+				</ul>
+				<ul class="nav navbar-nav pull-right">
+					<% if user_signed_in? %>
+					<li><%= link_to current_user.full_name, edit_user_registration_path %></li>
+					<li><%= link_to "Log Out", logout_path %></li>
+					<% else %>
+						<%= simple_form_for(:user,  as: :user, url: session_path(:user), html: {class: "login"}) do |f| %>
+
+  	<li><%= f.input :email, placeholder: 'Username', label: false %></li>
+	<li><%= f.input :password, placeholder: 'Password', label: false  %></li>
+
+ <li> <div><%= f.submit "Sign in", :class => "btn btn-success pull-left" %></div>
+ 	<div><%= link_to "Register", register_path, :class => "btn btn-primary" %></div>
+
+ </li>
+<% end %>
+
+					<% end %>
+				</ul>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+<% flash.each do |type, message| %>
+
+<div class="alert <%= flash_class type %>">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+		<%= message %>
+	</div>
+
+<% end %>
+
+
+
+	<%= yield %>
+
+	
+</div>
 
 </body>
 </html>
